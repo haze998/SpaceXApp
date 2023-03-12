@@ -7,16 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0634BE2129BE05FE0015D5A2 /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2029BE05FE0015D5A2 /* SFProText-Semibold.ttf */; };
+		0634BE2329BE060A0015D5A2 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2229BE060A0015D5A2 /* LabGrotesque-Regular.ttf */; };
+		0634BE2529BE06140015D5A2 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2429BE06140015D5A2 /* LabGrotesque-Bold.ttf */; };
+		0634BE2729BE061C0015D5A2 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2629BE061C0015D5A2 /* LabGrotesque-Medium.ttf */; };
 		0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542929B8BABF009529F2 /* AppDelegate.swift */; };
 		0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542B29B8BABF009529F2 /* SceneDelegate.swift */; };
 		0684542E29B8BABF009529F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542D29B8BABF009529F2 /* ViewController.swift */; };
 		0684543129B8BABF009529F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684542F29B8BABF009529F2 /* Main.storyboard */; };
 		0684543329B8BAC0009529F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0684543229B8BAC0009529F2 /* Assets.xcassets */; };
 		0684543629B8BAC0009529F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */; };
+		06FC761F29BCAB4D00A0A3FD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC761E29BCAB4D00A0A3FD /* UIViewController+Extension.swift */; };
 		80EF7B5CB6D42CAAEE0A8CED /* Pods_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F79DFE33646C537B651823 /* Pods_SpaceX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0634BE2029BE05FE0015D5A2 /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Semibold.ttf"; sourceTree = "<group>"; };
+		0634BE2229BE060A0015D5A2 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
+		0634BE2429BE06140015D5A2 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
+		0634BE2629BE061C0015D5A2 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
 		0684542629B8BABF009529F2 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684542929B8BABF009529F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684542B29B8BABF009529F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,6 +34,7 @@
 		0684543229B8BAC0009529F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0684543529B8BAC0009529F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0684543729B8BAC0009529F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06FC761E29BCAB4D00A0A3FD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		496CD231ADB9457BE36EB6F0 /* Pods-SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-SpaceX/Pods-SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
 		71F79DFE33646C537B651823 /* Pods_SpaceX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B05D8A638041FF0DB0C287 /* Pods-SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX.release.xcconfig"; path = "Target Support Files/Pods-SpaceX/Pods-SpaceX.release.xcconfig"; sourceTree = "<group>"; };
@@ -42,6 +52,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0634BE1F29BE05B30015D5A2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0634BE2629BE061C0015D5A2 /* LabGrotesque-Medium.ttf */,
+				0634BE2429BE06140015D5A2 /* LabGrotesque-Bold.ttf */,
+				0634BE2229BE060A0015D5A2 /* LabGrotesque-Regular.ttf */,
+				0634BE2029BE05FE0015D5A2 /* SFProText-Semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		0684541D29B8BABF009529F2 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +84,7 @@
 		0684542829B8BABF009529F2 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				0634BE1F29BE05B30015D5A2 /* Fonts */,
 				0684542929B8BABF009529F2 /* AppDelegate.swift */,
 				0684542B29B8BABF009529F2 /* SceneDelegate.swift */,
 				0684542D29B8BABF009529F2 /* ViewController.swift */,
@@ -70,6 +92,7 @@
 				0684543229B8BAC0009529F2 /* Assets.xcassets */,
 				0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */,
 				0684543729B8BAC0009529F2 /* Info.plist */,
+				06FC761E29BCAB4D00A0A3FD /* UIViewController+Extension.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -80,7 +103,6 @@
 				496CD231ADB9457BE36EB6F0 /* Pods-SpaceX.debug.xcconfig */,
 				C6B05D8A638041FF0DB0C287 /* Pods-SpaceX.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,7 +174,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0634BE2729BE061C0015D5A2 /* LabGrotesque-Medium.ttf in Resources */,
 				0684543629B8BAC0009529F2 /* LaunchScreen.storyboard in Resources */,
+				0634BE2529BE06140015D5A2 /* LabGrotesque-Bold.ttf in Resources */,
+				0634BE2129BE05FE0015D5A2 /* SFProText-Semibold.ttf in Resources */,
+				0634BE2329BE060A0015D5A2 /* LabGrotesque-Regular.ttf in Resources */,
 				0684543329B8BAC0009529F2 /* Assets.xcassets in Resources */,
 				0684543129B8BABF009529F2 /* Main.storyboard in Resources */,
 			);
@@ -207,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06FC761F29BCAB4D00A0A3FD /* UIViewController+Extension.swift in Sources */,
 				0684542E29B8BABF009529F2 /* ViewController.swift in Sources */,
 				0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */,
 				0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */,
