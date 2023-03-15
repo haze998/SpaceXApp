@@ -7,12 +7,15 @@
 
 import Foundation
 
-struct RocketViewModel {
+class RocketViewModel {
+    
     // MARK: - List with rockets info
     private(set) var listOfRockets = [Rocket]()
-    // MARK: - List with launches info
-    private(set) var listOfLaunches = [Launches]()
-    
-    
-    
+
+    // MARK: - Fetched rockets info
+    func fetchedRockets() {
+        RocketNetworkManager.shared.getRocket { rocket in
+            self.listOfRockets.append(contentsOf: rocket)
+        }
+    }
 }
