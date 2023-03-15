@@ -14,32 +14,25 @@ class RocketNetworkManager {
     
     private init() { }
     
-    // MARK: - List of rockets launches
-    private(set) var listOfLaunches: [Launches] = []
-    
     // MARK: - Get request about rockets info
-    func getRocket(with index: Int, completion: @escaping (Rocket) -> Void) {
+    func getRocket(completion: @escaping ([Rocket]) -> Void) {
         let request = AF.request("https://api.spacexdata.com/v4/rockets", method: .get)
         request.responseDecodable(of: [Rocket].self) { response in
             do {
-                let data = try response.result.get()
-                completion(data[index])
+                let result = try response.result.get()
+                completion(result)
             } catch {
                 print("Error: \(error)")
             }
         }
-    }
-    
+    }    
     // MARK: - Get request about launches info
-    func getLaunches(with identifier: String, completion: @escaping ([Launches]) -> Void) {
+    func getLaunches(completion: @escaping ([Launches]) -> Void) {
         let request = AF.request("https://api.spacexdata.com/v4/launches", method: .get)
         request.responseDecodable(of: [Launches].self) { response in
             do {
-                let data = try response.result.get()
-                self.listOfLaunches = data.filter({ rocketId in
-                    rocketId.id == "id"
-                })
-                completion(self.listOfLaunches)
+                let result = try response.result.get()
+                completion(result)
             } catch {
                 print("error: \(error)")
             }
