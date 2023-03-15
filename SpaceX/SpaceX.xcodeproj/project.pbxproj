@@ -11,10 +11,13 @@
 		0634BE2329BE060A0015D5A2 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2229BE060A0015D5A2 /* LabGrotesque-Regular.ttf */; };
 		0634BE2529BE06140015D5A2 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2429BE06140015D5A2 /* LabGrotesque-Bold.ttf */; };
 		0634BE2729BE061C0015D5A2 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2629BE061C0015D5A2 /* LabGrotesque-Medium.ttf */; };
+		06412A2B29C21E9A00D11400 /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A2A29C21E9A00D11400 /* RocketModel.swift */; };
+		06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A2C29C21FB000D11400 /* LaunchesModel.swift */; };
+		06412A3029C2223900D11400 /* RocketNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A2F29C2223900D11400 /* RocketNetworkManager.swift */; };
+		06412A3229C2224D00D11400 /* LaunchesNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3129C2224D00D11400 /* LaunchesNetworkManager.swift */; };
 		0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542929B8BABF009529F2 /* AppDelegate.swift */; };
 		0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542B29B8BABF009529F2 /* SceneDelegate.swift */; };
 		0684542E29B8BABF009529F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542D29B8BABF009529F2 /* ViewController.swift */; };
-		0684543129B8BABF009529F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684542F29B8BABF009529F2 /* Main.storyboard */; };
 		0684543329B8BAC0009529F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0684543229B8BAC0009529F2 /* Assets.xcassets */; };
 		0684543629B8BAC0009529F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */; };
 		06FC761F29BCAB4D00A0A3FD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC761E29BCAB4D00A0A3FD /* UIViewController+Extension.swift */; };
@@ -26,11 +29,14 @@
 		0634BE2229BE060A0015D5A2 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
 		0634BE2429BE06140015D5A2 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
 		0634BE2629BE061C0015D5A2 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
+		06412A2A29C21E9A00D11400 /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
+		06412A2C29C21FB000D11400 /* LaunchesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesModel.swift; sourceTree = "<group>"; };
+		06412A2F29C2223900D11400 /* RocketNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketNetworkManager.swift; sourceTree = "<group>"; };
+		06412A3129C2224D00D11400 /* LaunchesNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesNetworkManager.swift; sourceTree = "<group>"; };
 		0684542629B8BABF009529F2 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684542929B8BABF009529F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684542B29B8BABF009529F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0684542D29B8BABF009529F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0684543029B8BABF009529F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0684543229B8BAC0009529F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0684543529B8BAC0009529F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0684543729B8BAC0009529F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +69,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		06412A2929C21E8100D11400 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				06412A2A29C21E9A00D11400 /* RocketModel.swift */,
+				06412A2C29C21FB000D11400 /* LaunchesModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		06412A2E29C2222300D11400 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				06412A2F29C2223900D11400 /* RocketNetworkManager.swift */,
+				06412A3129C2224D00D11400 /* LaunchesNetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0684541D29B8BABF009529F2 = {
 			isa = PBXGroup;
 			children = (
@@ -84,11 +108,12 @@
 		0684542829B8BABF009529F2 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				06412A2E29C2222300D11400 /* Managers */,
+				06412A2929C21E8100D11400 /* Models */,
 				0634BE1F29BE05B30015D5A2 /* Fonts */,
 				0684542929B8BABF009529F2 /* AppDelegate.swift */,
 				0684542B29B8BABF009529F2 /* SceneDelegate.swift */,
 				0684542D29B8BABF009529F2 /* ViewController.swift */,
-				0684542F29B8BABF009529F2 /* Main.storyboard */,
 				0684543229B8BAC0009529F2 /* Assets.xcassets */,
 				0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */,
 				0684543729B8BAC0009529F2 /* Info.plist */,
@@ -180,7 +205,6 @@
 				0634BE2129BE05FE0015D5A2 /* SFProText-Semibold.ttf in Resources */,
 				0634BE2329BE060A0015D5A2 /* LabGrotesque-Regular.ttf in Resources */,
 				0684543329B8BAC0009529F2 /* Assets.xcassets in Resources */,
-				0684543129B8BABF009529F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,23 +258,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				06FC761F29BCAB4D00A0A3FD /* UIViewController+Extension.swift in Sources */,
+				06412A2B29C21E9A00D11400 /* RocketModel.swift in Sources */,
+				06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */,
 				0684542E29B8BABF009529F2 /* ViewController.swift in Sources */,
 				0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */,
+				06412A3029C2223900D11400 /* RocketNetworkManager.swift in Sources */,
 				0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */,
+				06412A3229C2224D00D11400 /* LaunchesNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0684542F29B8BABF009529F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0684543029B8BABF009529F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -389,7 +409,6 @@
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -418,7 +437,6 @@
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
