@@ -17,9 +17,12 @@
 		06412A3229C2224D00D11400 /* LaunchesNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3129C2224D00D11400 /* LaunchesNetworkManager.swift */; };
 		06412A3529C22C7100D11400 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3429C22C7100D11400 /* RocketViewModel.swift */; };
 		06412A3729C22C8200D11400 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3629C22C8200D11400 /* LaunchesViewModel.swift */; };
+		06412A3A29C234C200D11400 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3929C234C200D11400 /* PageViewController.swift */; };
+		06412A3C29C23E0800D11400 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3B29C23E0800D11400 /* LaunchesViewController.swift */; };
+		06412A3E29C23E1600D11400 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3D29C23E1600D11400 /* SettingsViewController.swift */; };
 		0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542929B8BABF009529F2 /* AppDelegate.swift */; };
 		0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542B29B8BABF009529F2 /* SceneDelegate.swift */; };
-		0684542E29B8BABF009529F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542D29B8BABF009529F2 /* ViewController.swift */; };
+		0684542E29B8BABF009529F2 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542D29B8BABF009529F2 /* RocketsViewController.swift */; };
 		0684543329B8BAC0009529F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0684543229B8BAC0009529F2 /* Assets.xcassets */; };
 		0684543629B8BAC0009529F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */; };
 		06FC761F29BCAB4D00A0A3FD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC761E29BCAB4D00A0A3FD /* UIViewController+Extension.swift */; };
@@ -37,10 +40,13 @@
 		06412A3129C2224D00D11400 /* LaunchesNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesNetworkManager.swift; sourceTree = "<group>"; };
 		06412A3429C22C7100D11400 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 		06412A3629C22C8200D11400 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
+		06412A3929C234C200D11400 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		06412A3B29C23E0800D11400 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
+		06412A3D29C23E1600D11400 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0684542629B8BABF009529F2 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684542929B8BABF009529F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684542B29B8BABF009529F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0684542D29B8BABF009529F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0684542D29B8BABF009529F2 /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
 		0684543229B8BAC0009529F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0684543529B8BAC0009529F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0684543729B8BAC0009529F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +106,17 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		06412A3829C233AB00D11400 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06412A3929C234C200D11400 /* PageViewController.swift */,
+				0684542D29B8BABF009529F2 /* RocketsViewController.swift */,
+				06412A3B29C23E0800D11400 /* LaunchesViewController.swift */,
+				06412A3D29C23E1600D11400 /* SettingsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0684541D29B8BABF009529F2 = {
 			isa = PBXGroup;
 			children = (
@@ -121,13 +138,13 @@
 		0684542829B8BABF009529F2 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				06412A3829C233AB00D11400 /* Views */,
 				06412A3329C22C4000D11400 /* ViewModels */,
 				06412A2E29C2222300D11400 /* Managers */,
 				06412A2929C21E8100D11400 /* Models */,
 				0634BE1F29BE05B30015D5A2 /* Fonts */,
 				0684542929B8BABF009529F2 /* AppDelegate.swift */,
 				0684542B29B8BABF009529F2 /* SceneDelegate.swift */,
-				0684542D29B8BABF009529F2 /* ViewController.swift */,
 				0684543229B8BAC0009529F2 /* Assets.xcassets */,
 				0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */,
 				0684543729B8BAC0009529F2 /* Info.plist */,
@@ -272,13 +289,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				06FC761F29BCAB4D00A0A3FD /* UIViewController+Extension.swift in Sources */,
+				06412A3C29C23E0800D11400 /* LaunchesViewController.swift in Sources */,
 				06412A2B29C21E9A00D11400 /* RocketModel.swift in Sources */,
+				06412A3A29C234C200D11400 /* PageViewController.swift in Sources */,
 				06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */,
-				0684542E29B8BABF009529F2 /* ViewController.swift in Sources */,
+				0684542E29B8BABF009529F2 /* RocketsViewController.swift in Sources */,
 				06412A3529C22C7100D11400 /* RocketViewModel.swift in Sources */,
 				0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */,
 				06412A3029C2223900D11400 /* RocketNetworkManager.swift in Sources */,
 				06412A3729C22C8200D11400 /* LaunchesViewModel.swift in Sources */,
+				06412A3E29C23E1600D11400 /* SettingsViewController.swift in Sources */,
 				0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */,
 				06412A3229C2224D00D11400 /* LaunchesNetworkManager.swift in Sources */,
 			);

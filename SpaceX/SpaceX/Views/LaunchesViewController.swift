@@ -1,19 +1,18 @@
 //
-//  ViewController.swift
+//  LaunchesViewController.swift
 //  SpaceX
 //
-//  Created by Evgeniy Docenko on 08.03.2023.
+//  Created by Evgeniy Docenko on 15.03.2023.
 //
 
-import SnapKit
 import UIKit
-import SwiftUI
+import SnapKit
 
-class ViewController: UIViewController {
+class LaunchesViewController: UIViewController {
 
     private lazy var lable: UILabel = {
         let label = UILabel()
-        label.text = "Canvas on UIKit"
+        label.text = "Launches"
         label.textColor = .white
         label.font = .systemFont(ofSize: 30)
         return label
@@ -21,17 +20,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
+        // Do any additional setup after loading the view.
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setupConstraints()
-    }
-    
-    private func setupUI() {
-        
     }
     
     private func setupConstraints() {
@@ -40,11 +35,5 @@ class ViewController: UIViewController {
             make.center.equalToSuperview()
         }
     }
-}
 
-// MARK: - Canvas Preview
-struct ViewControllerProvider: PreviewProvider {
-    static var previews: some View {
-        ViewController().showPreview()
-    }
 }
