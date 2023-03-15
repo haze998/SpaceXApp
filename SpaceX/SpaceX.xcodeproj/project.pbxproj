@@ -15,6 +15,8 @@
 		06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A2C29C21FB000D11400 /* LaunchesModel.swift */; };
 		06412A3029C2223900D11400 /* RocketNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A2F29C2223900D11400 /* RocketNetworkManager.swift */; };
 		06412A3229C2224D00D11400 /* LaunchesNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3129C2224D00D11400 /* LaunchesNetworkManager.swift */; };
+		06412A3529C22C7100D11400 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3429C22C7100D11400 /* RocketViewModel.swift */; };
+		06412A3729C22C8200D11400 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3629C22C8200D11400 /* LaunchesViewModel.swift */; };
 		0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542929B8BABF009529F2 /* AppDelegate.swift */; };
 		0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542B29B8BABF009529F2 /* SceneDelegate.swift */; };
 		0684542E29B8BABF009529F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542D29B8BABF009529F2 /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 		06412A2C29C21FB000D11400 /* LaunchesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesModel.swift; sourceTree = "<group>"; };
 		06412A2F29C2223900D11400 /* RocketNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketNetworkManager.swift; sourceTree = "<group>"; };
 		06412A3129C2224D00D11400 /* LaunchesNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesNetworkManager.swift; sourceTree = "<group>"; };
+		06412A3429C22C7100D11400 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
+		06412A3629C22C8200D11400 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
 		0684542629B8BABF009529F2 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684542929B8BABF009529F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684542B29B8BABF009529F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		06412A3329C22C4000D11400 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				06412A3429C22C7100D11400 /* RocketViewModel.swift */,
+				06412A3629C22C8200D11400 /* LaunchesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		0684541D29B8BABF009529F2 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +121,7 @@
 		0684542829B8BABF009529F2 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				06412A3329C22C4000D11400 /* ViewModels */,
 				06412A2E29C2222300D11400 /* Managers */,
 				06412A2929C21E8100D11400 /* Models */,
 				0634BE1F29BE05B30015D5A2 /* Fonts */,
@@ -261,8 +275,10 @@
 				06412A2B29C21E9A00D11400 /* RocketModel.swift in Sources */,
 				06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */,
 				0684542E29B8BABF009529F2 /* ViewController.swift in Sources */,
+				06412A3529C22C7100D11400 /* RocketViewModel.swift in Sources */,
 				0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */,
 				06412A3029C2223900D11400 /* RocketNetworkManager.swift in Sources */,
+				06412A3729C22C8200D11400 /* LaunchesViewModel.swift in Sources */,
 				0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */,
 				06412A3229C2224D00D11400 /* LaunchesNetworkManager.swift in Sources */,
 			);
