@@ -13,10 +13,11 @@ class RocketViewModel {
     private(set) var listOfRockets: [Rocket] = []
 
     // MARK: - Fetched rockets info
-    func fetchedRockets(completion: @escaping ([Rocket]) -> Void) {
+    func fetchedRockets(index: Int, completion: @escaping (Rocket) -> Void) {
         RocketNetworkManager.shared.getRocket { rocket in
-            self.listOfRockets.append(contentsOf: rocket)
-            completion(rocket)
+            
+            self.listOfRockets = rocket
+            completion(rocket[index])
         }
     }
 }

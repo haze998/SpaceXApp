@@ -13,7 +13,7 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
     
     var viewModel = RocketViewModel()
     var index = Int()
-    var rocket: [Rocket]?
+    var rocket: Rocket?
     init(index: Int = Int()) {
         super.init(nibName: nil, bundle: nil)
         self.index = index
@@ -55,20 +55,27 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
     private lazy var settingsButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "setting"), for: .normal)
+        button.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
         return button
     }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadRocketInfo()
+        //        loadRocketInfo(index: index)
         setupUI()
-        settingsButtonTapped()
+        //        settingsButtonTapped()
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubviews(views: [rocketImage, rocketsInfoView])
         rocketsInfoView.addSubviews(views: [rocketNameLabel, settingsButton])
+        viewModel.fetchedRockets(index: index) { rocket in
+            guard let url = URL(string: rocket.flickrImages?.randomElement() ?? "") else { return }
+            self.rocketImage.sd_setImage(with: url)
+            self.rocketNameLabel.text = rocket.name
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,24 +96,25 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         rocketsInfoView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
-    private func settingsButtonTapped() {
-        settingsButton.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
-    }
+    //    private func settingsButtonTapped() {
+    ////        settingsButton.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
+    //    }
     
     @objc private func settingsButtonAction() {
         present(SettingsViewController(), animated: true)
     }
     
-    private func loadRocketInfo() {
-        viewModel.fetchedRockets { rocket in
-            self.rocket = rocket
-            rocket.forEach { element in
-                guard let url = URL(string: element.flickrImages?.randomElement() ?? "") else { return }
-                self.rocketImage.sd_setImage(with: url)
-                self.rocketNameLabel.text = element.name
-            }
-        }
-    }
+    //    private func loadRocketInfo(index: Int) {
+    //        viewModel.fetchedRockets { rocket in
+    //            self.rocket = rocket[index]
+    ////            rocket.forEach { element in
+    ////                guard let url = URL(string: element.flickrImages?.randomElement() ?? "") else { return }
+    ////                self.rocketImage.sd_setImage(with: url)
+    ////                self.rocketNameLabel.text = element.name
+    ////            }
+    //
+    //        }
+    //    }
     
     private func setupConstraints() {
         scrollView.snp.makeConstraints { make in
