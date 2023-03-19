@@ -64,18 +64,18 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         super.viewDidLoad()
         //        loadRocketInfo(index: index)
         setupUI()
-        //        settingsButtonTapped()
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubviews(views: [rocketImage, rocketsInfoView])
         rocketsInfoView.addSubviews(views: [rocketNameLabel, settingsButton])
-        viewModel.fetchedRockets(index: index) { rocket in
-            guard let url = URL(string: rocket.flickrImages?.randomElement() ?? "") else { return }
-            self.rocketImage.sd_setImage(with: url)
-            self.rocketNameLabel.text = rocket.name
-            
-        }
+        //        viewModel.fetchedRockets(index: index) { rocket in
+        //            guard let url = URL(string: rocket.flickrImages?.randomElement() ?? "") else { return }
+        //            self.rocketImage.sd_setImage(with: url)
+        //            self.rocketNameLabel.text = rocket.name
+        //
+        //        }
+        loadRocketInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,25 +96,17 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         rocketsInfoView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
-    //    private func settingsButtonTapped() {
-    ////        settingsButton.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
-    //    }
-    
     @objc private func settingsButtonAction() {
         present(SettingsViewController(), animated: true)
     }
     
-    //    private func loadRocketInfo(index: Int) {
-    //        viewModel.fetchedRockets { rocket in
-    //            self.rocket = rocket[index]
-    ////            rocket.forEach { element in
-    ////                guard let url = URL(string: element.flickrImages?.randomElement() ?? "") else { return }
-    ////                self.rocketImage.sd_setImage(with: url)
-    ////                self.rocketNameLabel.text = element.name
-    ////            }
-    //
-    //        }
-    //    }
+    private func loadRocketInfo() {
+        viewModel.fetchedRockets(index: index) { rocket in
+            guard let url = URL(string: rocket.flickrImages?.randomElement() ?? "") else { return }
+            self.rocketImage.sd_setImage(with: url)
+            self.rocketNameLabel.text = rocket.name
+        }
+    }
     
     private func setupConstraints() {
         scrollView.snp.makeConstraints { make in

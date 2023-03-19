@@ -46,7 +46,7 @@ extension PageViewController: UIPageViewControllerDataSource {
         if index > 0 {
             return arrOfControllers[index - 1]
         }
-        return UIViewController()
+        return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -54,10 +54,8 @@ extension PageViewController: UIPageViewControllerDataSource {
         if index < arrOfControllers.count - 1 {
             return arrOfControllers[index + 1]
         }
-        return UIViewController()
+        return nil
     }
-    
-    
 }
 
 // MARK: - Delegate
