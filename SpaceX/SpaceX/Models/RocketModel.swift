@@ -103,7 +103,7 @@ import Foundation
 
 import Foundation
 
-// MARK: - WelcomeElement
+// MARK: - RocketModel
 struct Rocket: Decodable {
     let height, diameter: Diameter?
     let mass: Mass?

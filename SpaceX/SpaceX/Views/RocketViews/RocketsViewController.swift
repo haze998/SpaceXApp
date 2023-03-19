@@ -40,7 +40,6 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
     
     private lazy var rocketImage: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .purple
         return image
     }()
     
@@ -50,7 +49,6 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         let label = UILabel()
         label.textColor = UIColor(red: 0.965, green: 0.965, blue: 0.965, alpha: 1)
         label.font = UIFont(name: "LabGrotesque-Medium", size: 24)
-        label.text = "Falcon Heavy"
         return label
     }()
     
@@ -65,6 +63,7 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         super.viewDidLoad()
         loadRocketInfo()
         setupUI()
+        settingsButtonTapped()
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -88,6 +87,14 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         rocketsInfoView.clipsToBounds = true
         rocketsInfoView.layer.cornerRadius = 30
         rocketsInfoView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
+    
+    private func settingsButtonTapped() {
+        settingsButton.addTarget(self, action: #selector(settingsButtonAction), for: .touchUpInside)
+    }
+    
+    @objc private func settingsButtonAction() {
+        present(SettingsViewController(), animated: true)
     }
     
     private func loadRocketInfo() {
@@ -123,7 +130,7 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         
         rocketImage.snp.makeConstraints { make in
             rocketImage.snp.removeConstraints()
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().inset(-40)
             make.left.right.equalToSuperview()
             make.height.equalTo(325)
         }
@@ -145,10 +152,3 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
     }
 }
 
-extension UIView {
-    func addSubviews(views: [UIView]) {
-        views.forEach { view in
-            addSubview(view)
-        }
-    }
-}

@@ -13,11 +13,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: windowScene)
+//        let viewController = PageViewController()
+//        window?.rootViewController = viewController
+//        window?.makeKeyAndVisible()
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let viewController = PageViewController()
-        window?.rootViewController = viewController
+        let pageViewController = PageViewController()
+        let viewController = RocketsViewController(index: 0)
         window?.makeKeyAndVisible()
+        window?.backgroundColor = .black
+        let firstNav = UINavigationController(rootViewController: pageViewController)
+        let secondNav = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = firstNav
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
