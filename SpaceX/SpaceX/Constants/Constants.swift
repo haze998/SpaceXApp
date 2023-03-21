@@ -13,3 +13,23 @@ enum FontNames: String {
     case labGrotesqueRegular = "LabGrotesque-Regular"
     case sfProText = "SFProText-Semibold"
 }
+
+enum Quantity: String {
+    case Height
+    case Diameter
+    case Weight
+    case Payload
+    
+    var measures: [String] {
+        switch self {
+        case .Height:
+            return ["m", "ft"]
+        case .Diameter:
+            return ["m", "ft"]
+        case .Weight:
+            return ["kg", "lb"]
+        case .Payload:
+            return ["kg", "lb"]
+        }
+    }
+}

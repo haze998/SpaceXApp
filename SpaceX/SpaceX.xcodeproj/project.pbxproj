@@ -21,6 +21,7 @@
 		06412A3A29C234C200D11400 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3929C234C200D11400 /* PageViewController.swift */; };
 		06412A3C29C23E0800D11400 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3B29C23E0800D11400 /* LaunchesViewController.swift */; };
 		06412A3E29C23E1600D11400 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A3D29C23E1600D11400 /* SettingsViewController.swift */; };
+		067FB4BF29CA07CC0075B737 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067FB4BE29CA07CC0075B737 /* SettingsView.swift */; };
 		0684542A29B8BABF009529F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542929B8BABF009529F2 /* AppDelegate.swift */; };
 		0684542C29B8BABF009529F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542B29B8BABF009529F2 /* SceneDelegate.swift */; };
 		0684542E29B8BABF009529F2 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542D29B8BABF009529F2 /* RocketsViewController.swift */; };
@@ -46,6 +47,7 @@
 		06412A3929C234C200D11400 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		06412A3B29C23E0800D11400 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		06412A3D29C23E1600D11400 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		067FB4BE29CA07CC0075B737 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0684542629B8BABF009529F2 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684542929B8BABF009529F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684542B29B8BABF009529F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				06412A3D29C23E1600D11400 /* SettingsViewController.swift */,
+				067FB4BE29CA07CC0075B737 /* SettingsView.swift */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				06412A2B29C21E9A00D11400 /* RocketModel.swift in Sources */,
 				06B5C32D29C489E2008FC679 /* RocketInfoView.swift in Sources */,
 				06412A3A29C234C200D11400 /* PageViewController.swift in Sources */,
+				067FB4BF29CA07CC0075B737 /* SettingsView.swift in Sources */,
 				06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */,
 				0684542E29B8BABF009529F2 /* RocketsViewController.swift in Sources */,
 				06EE605C29C69E0100013E99 /* Extension + UIView.swift in Sources */,
