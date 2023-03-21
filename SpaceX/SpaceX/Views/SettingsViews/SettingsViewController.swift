@@ -8,7 +8,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+        
     private lazy var closeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Close", for: .normal)
@@ -24,13 +24,31 @@ class SettingsViewController: UIViewController {
         label.text = "Settings"
         return label
     }()
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubviews(views: [closeButton, titleLable])
-        
+        view.addSubviews(views: [closeButton, titleLable, stackView])
         setupUI()
         closeButtonTapped()
+        
+        Quantity.allCases.forEach { el in
+             let settingsView = SettingsView()
+            settingsView.configureSettings(with: el)
+            stackView.addArrangedSubview(settingsView)
+        }
+//        Settings.allCases.forEach { setting in
+//            let settingView = SettingsView()
+//            settingView.configure(param: setting)
+//            stackView.addArrangedSubview(settingView)
+//        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -61,7 +79,11 @@ class SettingsViewController: UIViewController {
             make.width.equalTo(80)
             make.right.equalTo(closeButton).inset(114)
             make.top.equalToSuperview().inset(18)
-            
+        }
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(titleLable).inset(78)
+            make.width.equalToSuperview()
+            make.height.equalTo(312)
         }
         
     }

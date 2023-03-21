@@ -11,21 +11,14 @@ import SnapKit
 class SettingsView: UIView {
     
     private let defaults = UserDefaults.standard
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private var quantity: Quantity?
+//    private var segmentIndex = cu
         
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+        
     private lazy var customSegmentControl: UISegmentedControl = {
-        //let segmentControlItems = ["", ""]
-        let segmentControl = UISegmentedControl(items: ["", ""])
+        let segmentControl = UISegmentedControl(items: ["2", "3"])
         segmentControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
-        segmentControl.backgroundColor = .init(red: 33, green: 33, blue: 33, alpha: 1)
+        segmentControl.backgroundColor = UIColor(red: 0.129, green: 0.129, blue: 0.129, alpha: 1)
         segmentControl.selectedSegmentTintColor = .white
         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 0.557, green: 0.557, blue: 0.561, alpha: 1), NSAttributedString.Key.font: UIFont(name: FontNames.sfProText.rawValue, size: 14) ?? ""], for: .normal)
         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1), NSAttributedString.Key.font: UIFont(name: FontNames.sfProText.rawValue, size: 14) ?? ""], for: .selected)
@@ -40,9 +33,38 @@ class SettingsView: UIView {
         return label
     }()
     
+    override func layoutSubviews() {
+        setupConstraints()
+    }
+    
     @objc private func segmentChanged() {
-        defaults.set(customSegmentControl.selectedSegmentIndex, forKey: <#T##String#>)
-        defaults.synchronize()
+        UserDefaults.standard.setValue(customSegmentControl.selectedSegmentIndex, forKey: quantity?.rawValue ?? "")
+    }
+    
+    func configureSettings(with value: Quantity) {
+        titleLabel.text = value.rawValue
+        self.quantity = value
+        customSegmentControl.selectedSegmentIndex = defaults.integer(forKey: value.rawValue)
+        customSegmentControl.setTitle(value.measures[0], forSegmentAt: 0)
+        customSegmentControl.setTitle(value.measures[1], forSegmentAt: 1)
+    }
+    
+    private func setupConstraints() {
+        self.addSubviews(views: [customSegmentControl, titleLabel])
+        
+        customSegmentControl.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(28)
+            make.height.equalTo(40)
+            make.width.equalTo(115)
+            make.top.equalToSuperview()
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(28)
+            make.height.equalTo(24)
+            make.width.equalTo(176)
+            make.right.equalTo(customSegmentControl).inset(28)
+            make.centerY.equalTo(customSegmentControl)
+        }
     }
 }
 

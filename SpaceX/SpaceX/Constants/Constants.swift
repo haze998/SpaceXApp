@@ -14,7 +14,7 @@ enum FontNames: String {
     case sfProText = "SFProText-Semibold"
 }
 
-enum Quantity: String {
+enum Quantity: String, CaseIterable {
     case Height
     case Diameter
     case Weight
