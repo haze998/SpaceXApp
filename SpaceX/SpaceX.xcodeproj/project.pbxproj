@@ -12,6 +12,8 @@
 		0634BE2329BE060A0015D5A2 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2229BE060A0015D5A2 /* LabGrotesque-Regular.ttf */; };
 		0634BE2529BE06140015D5A2 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2429BE06140015D5A2 /* LabGrotesque-Bold.ttf */; };
 		0634BE2729BE061C0015D5A2 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0634BE2629BE061C0015D5A2 /* LabGrotesque-Medium.ttf */; };
+		0640260C29CB5BD600088DFB /* MeasureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0640260B29CB5BD600088DFB /* MeasureCollectionViewCell.swift */; };
+		0640260E29CB7D7900088DFB /* Extension + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0640260D29CB7D7900088DFB /* Extension + CollectionView.swift */; };
 		06412A2B29C21E9A00D11400 /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A2A29C21E9A00D11400 /* RocketModel.swift */; };
 		06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A2C29C21FB000D11400 /* LaunchesModel.swift */; };
 		06412A3029C2223900D11400 /* RocketNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06412A2F29C2223900D11400 /* RocketNetworkManager.swift */; };
@@ -38,6 +40,8 @@
 		0634BE2229BE060A0015D5A2 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
 		0634BE2429BE06140015D5A2 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
 		0634BE2629BE061C0015D5A2 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
+		0640260B29CB5BD600088DFB /* MeasureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureCollectionViewCell.swift; sourceTree = "<group>"; };
+		0640260D29CB7D7900088DFB /* Extension + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + CollectionView.swift"; sourceTree = "<group>"; };
 		06412A2A29C21E9A00D11400 /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		06412A2C29C21FB000D11400 /* LaunchesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesModel.swift; sourceTree = "<group>"; };
 		06412A2F29C2223900D11400 /* RocketNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketNetworkManager.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				06EE605B29C69E0100013E99 /* Extension + UIView.swift */,
+				0640260D29CB7D7900088DFB /* Extension + CollectionView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			children = (
 				0684542D29B8BABF009529F2 /* RocketsViewController.swift */,
 				06B5C32C29C489E2008FC679 /* RocketInfoView.swift */,
+				0640260B29CB5BD600088DFB /* MeasureCollectionViewCell.swift */,
 			);
 			path = RocketViews;
 			sourceTree = "<group>";
@@ -346,10 +352,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				06412A3C29C23E0800D11400 /* LaunchesViewController.swift in Sources */,
+				0640260C29CB5BD600088DFB /* MeasureCollectionViewCell.swift in Sources */,
 				06412A2B29C21E9A00D11400 /* RocketModel.swift in Sources */,
 				06B5C32D29C489E2008FC679 /* RocketInfoView.swift in Sources */,
 				06412A3A29C234C200D11400 /* PageViewController.swift in Sources */,
 				067FB4BF29CA07CC0075B737 /* SettingsView.swift in Sources */,
+				0640260E29CB7D7900088DFB /* Extension + CollectionView.swift in Sources */,
 				06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */,
 				0684542E29B8BABF009529F2 /* RocketsViewController.swift in Sources */,
 				06EE605C29C69E0100013E99 /* Extension + UIView.swift in Sources */,

@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 import SDWebImage
 
-class RocketsViewController: UIViewController, ConstraintRelatableTarget {
+class RocketsViewController: UIViewController {
     
     var viewModel = RocketViewModel()
     var index = Int()
@@ -40,6 +40,7 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
     
     private lazy var rocketImage: UIImageView = {
         let image = UIImageView()
+        image.contentMode = .scaleToFill
         return image
     }()
     
@@ -59,27 +60,33 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         return button
     }()
     
+    private lazy var measureCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        loadRocketInfo(index: index)
+//        viewModel.fetchedRockets(index: index) { _ in
+//            self.measureCollectionView.reloadData()
+//        }
         setupUI()
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubviews(views: [rocketImage, rocketsInfoView])
-        rocketsInfoView.addSubviews(views: [rocketNameLabel, settingsButton])
-        //        viewModel.fetchedRockets(index: index) { rocket in
-        //            guard let url = URL(string: rocket.flickrImages?.randomElement() ?? "") else { return }
-        //            self.rocketImage.sd_setImage(with: url)
-        //            self.rocketNameLabel.text = rocket.name
-        //
-        //        }
-        loadRocketInfo()
+        rocketsInfoView.addSubviews(views: [rocketNameLabel, settingsButton, measureCollectionView])
+        
+        measureCollectionView.delegate = self
+        measureCollectionView.dataSource = self
+        measureCollectionView.register(MeasureCollectionViewCell.self, forCellWithReuseIdentifier: MeasureCollectionViewCell.id)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadRocketInfo()
         
     }
     
@@ -105,6 +112,13 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
             guard let url = URL(string: rocket.flickrImages?.randomElement() ?? "") else { return }
             self.rocketImage.sd_setImage(with: url)
             self.rocketNameLabel.text = rocket.name
+            print("rocket: \(rocket)")
+            self.measureCollectionView.reloadData()
+        }
+    }
+    
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { (sectionNumber, _) -> NSCollectionLayoutSection? in return self.measureCollectionView.measuresSectionLayout()
         }
     }
     
@@ -130,12 +144,12 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
         
         rocketImage.snp.makeConstraints { make in
             rocketImage.snp.removeConstraints()
-            make.top.equalToSuperview().inset(-40)
+            make.top.equalToSuperview()
             make.left.right.equalToSuperview()
-            make.height.equalTo(325)
+            make.height.equalTo(450)
         }
         rocketsInfoView.snp.makeConstraints { make in
-            make.top.equalTo(rocketImage).offset(248)
+            make.top.equalTo(rocketImage).offset(388)
             make.left.right.bottom.equalToSuperview()
         }
         rocketNameLabel.snp.makeConstraints { make in
@@ -149,6 +163,29 @@ class RocketsViewController: UIViewController, ConstraintRelatableTarget {
             make.top.equalToSuperview().inset(50)
             make.right.equalToSuperview().inset(35)
         }
+        measureCollectionView.snp.makeConstraints { make in
+            make.height.equalTo(120)
+            make.top.equalTo(settingsButton).inset(54)
+            make.left.right.equalTo(rocketsInfoView).inset(0)
+            
+        }
     }
 }
 
+extension RocketsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.listOfRockets.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MeasureCollectionViewCell.id, for: indexPath) as? MeasureCollectionViewCell else { return UICollectionViewCell() }
+        cell.configureCell(with: viewModel.listOfRockets[index], quantity: Quantity.allCases[indexPath.row], indexPath: indexPath)
+        return cell
+    }
+}
+
+extension RocketsViewController: UICollectionViewDelegate { }
+
+extension RocketsViewController: UIPageViewControllerDelegate {
+    
+}

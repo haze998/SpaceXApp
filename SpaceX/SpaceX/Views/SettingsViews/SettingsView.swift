@@ -12,9 +12,7 @@ class SettingsView: UIView {
     
     private let defaults = UserDefaults.standard
     private var quantity: Quantity?
-//    private var segmentIndex = cu
-        
-        
+
     private lazy var customSegmentControl: UISegmentedControl = {
         let segmentControl = UISegmentedControl(items: ["2", "3"])
         segmentControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
