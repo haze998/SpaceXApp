@@ -9,7 +9,10 @@ import SnapKit
 import UIKit
 import SDWebImage
 
-class RocketsViewController: UIViewController {
+class RocketsViewController: UIViewController, ReloadCollectionView {
+    func reloadData() {
+        measureCollectionView.reloadData()
+    }
     
     var viewModel = RocketViewModel()
     var index = Int()
@@ -67,6 +70,17 @@ class RocketsViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var showLaunchesButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Show launches", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: FontNames.labGrotesqueBold.rawValue, size: 18)
+        button.backgroundColor = UIColor(red: 0.129, green: 0.129, blue: 0.129, alpha: 1)
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(showLaunchesButtonAction), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +88,7 @@ class RocketsViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubviews(views: [rocketImage, rocketsInfoView])
-        rocketsInfoView.addSubviews(views: [rocketNameLabel, settingsButton, measureCollectionView])
+        rocketsInfoView.addSubviews(views: [rocketNameLabel, settingsButton, measureCollectionView, showLaunchesButton])
         
         measureCollectionView.delegate = self
         measureCollectionView.dataSource = self
@@ -99,13 +113,21 @@ class RocketsViewController: UIViewController {
     
     private func setupUI() {
         // corner radius of top corners rocketsInfoView
+        edgesForExtendedLayout = .top
         rocketsInfoView.clipsToBounds = true
         rocketsInfoView.layer.cornerRadius = 30
         rocketsInfoView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     @objc private func settingsButtonAction() {
-        present(SettingsViewController(), animated: true)
+        let vc = SettingsViewController()
+        vc.delegate = self
+        present(vc, animated: true)
+    }
+    
+    @objc private func showLaunchesButtonAction() {
+        let vc = LaunchesViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func loadRocketInfo() {
@@ -146,14 +168,13 @@ class RocketsViewController: UIViewController {
             } else if UIScreen.main.bounds.height > 800 && UIScreen.main.bounds.height <= 813 {
                 make.height.equalTo(view.frame.height + 50)
             } else {
-                make.height.equalTo(1300)
+                make.height.equalTo(1250)
                 scrollView.isScrollEnabled = true
             }
         }
         
         rocketImage.snp.makeConstraints { make in
-            rocketImage.snp.removeConstraints()
-            make.top.equalToSuperview()
+            make.top.equalTo(-(navigationController?.navigationBar.frame.size.height ?? 0))
             make.left.right.equalToSuperview()
             make.height.equalTo(450)
         }
@@ -176,14 +197,28 @@ class RocketsViewController: UIViewController {
             make.height.equalTo(900)
             make.top.equalTo(settingsButton).inset(54)
             make.left.right.equalTo(rocketsInfoView).inset(0)
-            
+        }
+        showLaunchesButton.snp.makeConstraints { make in
+            make.width.equalTo(311)
+            make.height.equalTo(56)
+            make.centerX.equalTo(contentView)
+            make.bottom.equalTo(contentView).inset(0)
         }
     }
 }
 
 extension RocketsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.listOfRockets.count
+        if viewModel.listOfRockets.isEmpty {
+            return 0
+        } else {
+            switch section {
+            case 0:
+                return 4
+            default:
+                return 3
+            }
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -20,8 +20,12 @@ class LaunchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupUI()
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     override func viewWillLayoutSubviews() {

@@ -39,11 +39,11 @@ class FirstStageCollectionViewCell: UICollectionViewCell {
     public func configureCell(with rocket: Rocket, indexPath: IndexPath) {
         
         switch indexPath.row {
-        case 1: trailingLabel.text = (String(describing: rocket.firstStage?.engines ?? 0))
+        case 0: trailingLabel.text = (String(describing: rocket.firstStage?.engines ?? 0))
             leadingLabel.text = FirstStageInfo.numberOfEngines.rawValue
-        case 2: trailingLabel.text = "\(String(describing: rocket.firstStage?.fuelAmountTons ?? 0)) ton"
+        case 1: trailingLabel.text = "\(String(describing: rocket.firstStage?.fuelAmountTons ?? 0)) ton"
             leadingLabel.text = FirstStageInfo.fuelQuantity.rawValue
-        case 3: trailingLabel.text = "\(String(describing: rocket.firstStage?.burnTimeSEC ?? 0)) sec"
+        case 2: trailingLabel.text = "\(String(describing: rocket.firstStage?.burnTimeSEC ?? 0)) sec"
             leadingLabel.text = FirstStageInfo.combustionTime.rawValue
         default: return
         }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ReloadCollectionView: AnyObject {
+    func reloadData()
+}
+
 class SettingsViewController: UIViewController {
         
     private lazy var closeButton: UIButton = {
@@ -32,6 +36,8 @@ class SettingsViewController: UIViewController {
         stackView.distribution = .fillEqually
         return stackView
     }()
+    
+    weak var delegate: ReloadCollectionView?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +50,11 @@ class SettingsViewController: UIViewController {
             settingsView.configureSettings(with: el)
             stackView.addArrangedSubview(settingsView)
         }
-//        Settings.allCases.forEach { setting in
-//            let settingView = SettingsView()
-//            settingView.configure(param: setting)
-//            stackView.addArrangedSubview(settingView)
-//        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.reloadData()
     }
     
     override func viewWillLayoutSubviews() {

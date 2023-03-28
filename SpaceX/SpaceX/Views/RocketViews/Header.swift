@@ -34,11 +34,11 @@ class Header: UICollectionReusableView {
         containerView.addSubview(headerLabel)
         
         containerView.snp.makeConstraints { make in
-            make.top.right.bottom.left.equalToSuperview()
+            make.edges.equalToSuperview()
         }
         
         headerLabel.snp.makeConstraints { make in
-            make.top.bottom.right.equalTo(containerView)
+            make.centerX.equalToSuperview()
             make.left.equalTo(containerView).inset(16)
         }
     }
