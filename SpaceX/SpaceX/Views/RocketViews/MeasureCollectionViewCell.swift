@@ -41,7 +41,6 @@ class MeasureCollectionViewCell: UICollectionViewCell {
     public func configureCell(with rocket: Rocket, quantity: Quantity, indexPath: IndexPath) {
         let defaultsStorage = UserDefaults.standard.integer(forKey: quantity.rawValue)
         measureLabel.text = "\(quantity.rawValue)" + ", " + "\(quantity.measures[defaultsStorage])"
-        print(indexPath)
         switch indexPath.item {
         case 0:
             defaultsStorage == 0 ? (counterLabel.text = "\(rocket.height?.meters ?? 0)") : (counterLabel.text = "\(rocket.height?.feet ?? 0)")

@@ -63,17 +63,14 @@ class RocketsViewController: UIViewController {
     private lazy var measureCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.backgroundColor = .clear
+        collectionView.isScrollEnabled = false
         return collectionView
     }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel.fetchedRockets(index: index) { _ in
-//            self.measureCollectionView.reloadData()
-//        }
         setupUI()
-        
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubviews(views: [rocketImage, rocketsInfoView])
@@ -82,6 +79,10 @@ class RocketsViewController: UIViewController {
         measureCollectionView.delegate = self
         measureCollectionView.dataSource = self
         measureCollectionView.register(MeasureCollectionViewCell.self, forCellWithReuseIdentifier: MeasureCollectionViewCell.id)
+        measureCollectionView.register(RocketWikiCollectionViewCell.self, forCellWithReuseIdentifier: RocketWikiCollectionViewCell.id)
+        measureCollectionView.register(FirstStageCollectionViewCell.self, forCellWithReuseIdentifier: FirstStageCollectionViewCell.id)
+        measureCollectionView.register(SecondStageCollectionViewCell.self, forCellWithReuseIdentifier: SecondStageCollectionViewCell.id)
+        measureCollectionView.register(Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Header.id)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,13 +113,21 @@ class RocketsViewController: UIViewController {
             guard let url = URL(string: rocket.flickrImages?.randomElement() ?? "") else { return }
             self.rocketImage.sd_setImage(with: url)
             self.rocketNameLabel.text = rocket.name
-            print("rocket: \(rocket)")
             self.measureCollectionView.reloadData()
         }
     }
     
     private func createLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (sectionNumber, _) -> NSCollectionLayoutSection? in return self.measureCollectionView.measuresSectionLayout()
+        return UICollectionViewCompositionalLayout { (sectionNumber, _) -> NSCollectionLayoutSection? in
+            if sectionNumber ==  0 {
+                return self.measureCollectionView.measuresSectionLayout()
+            } else if sectionNumber ==  1 {
+                return self.measureCollectionView.rocketWikiSectionLayout()
+            } else if sectionNumber == 2 {
+                return self.measureCollectionView.firstStageSectionLayout()
+            } else {
+                return self.measureCollectionView.secondStageSectionLayout()
+            }
         }
     }
     
@@ -137,7 +146,7 @@ class RocketsViewController: UIViewController {
             } else if UIScreen.main.bounds.height > 800 && UIScreen.main.bounds.height <= 813 {
                 make.height.equalTo(view.frame.height + 50)
             } else {
-                make.height.equalTo(890)
+                make.height.equalTo(1300)
                 scrollView.isScrollEnabled = true
             }
         }
@@ -164,7 +173,7 @@ class RocketsViewController: UIViewController {
             make.right.equalToSuperview().inset(35)
         }
         measureCollectionView.snp.makeConstraints { make in
-            make.height.equalTo(120)
+            make.height.equalTo(900)
             make.top.equalTo(settingsButton).inset(54)
             make.left.right.equalTo(rocketsInfoView).inset(0)
             
@@ -177,10 +186,42 @@ extension RocketsViewController: UICollectionViewDataSource {
         viewModel.listOfRockets.count
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 4
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MeasureCollectionViewCell.id, for: indexPath) as? MeasureCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(with: viewModel.listOfRockets[index], quantity: Quantity.allCases[indexPath.row], indexPath: indexPath)
+        guard let secondCell = collectionView.dequeueReusableCell(withReuseIdentifier: RocketWikiCollectionViewCell.id, for: indexPath) as? RocketWikiCollectionViewCell else { return UICollectionViewCell() }
+        guard let thirdCell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstStageCollectionViewCell.id, for: indexPath) as? FirstStageCollectionViewCell else { return UICollectionViewCell() }
+        guard let fourthCell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondStageCollectionViewCell.id, for: indexPath) as? SecondStageCollectionViewCell else { return UICollectionViewCell() }
+        switch indexPath.section {
+        case 0:
+            cell.configureCell(with: viewModel.listOfRockets[index], quantity: Quantity.allCases[indexPath.row], indexPath: indexPath)
+            return cell
+        case 1:
+            secondCell.configureCell(with: viewModel.listOfRockets[index], indexPath: indexPath)
+            return secondCell
+        case 2:
+            thirdCell.configureCell(with: viewModel.listOfRockets[index], indexPath: indexPath)
+            return thirdCell
+        case 3:
+            fourthCell.configureCell(with: viewModel.listOfRockets[index], indexPath: indexPath)
+            return fourthCell
+        default:
+            break
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Header.id, for: indexPath) as? Header else { return UICollectionReusableView() }
+        switch indexPath.section {
+        case 2: header.headerLabel.text = FirstStageInfo.header.rawValue
+        case 3: header.headerLabel.text = SecondStageInfo.header.rawValue
+        default: return header
+        }
+        return header
     }
 }
 

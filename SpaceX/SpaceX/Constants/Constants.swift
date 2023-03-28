@@ -33,3 +33,23 @@ enum Quantity: String, CaseIterable {
         }
     }
 }
+
+enum WikiInfo: String {
+    case firstLaunch = "First launch"
+    case country = "Country"
+    case launchCost = "Launch cost"
+}
+
+enum FirstStageInfo: String {
+    case header = "FIRST STAGE"
+    case numberOfEngines = "Number of engines"
+    case fuelQuantity = "Fuel quantity"
+    case combustionTime = "Combustion time"
+}
+
+enum SecondStageInfo: String {
+    case header = "SECOND STAGE"
+    case numberOfEngines = "Number of engines"
+    case fuelQuantity = "Fuel quantity"
+    case combustionTime = "Combustion time"
+}
