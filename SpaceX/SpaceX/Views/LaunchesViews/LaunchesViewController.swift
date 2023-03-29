@@ -25,10 +25,6 @@ class LaunchesViewController: UIViewController {
         launchesCollectionView.delegate = self
         launchesCollectionView.dataSource = self
         launchesCollectionView.register(LaunchesCollectionViewCell.self, forCellWithReuseIdentifier: LaunchesCollectionViewCell.id)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         viewModel.fetchedLaunches {
             self.launchesCollectionView.reloadData()

@@ -23,7 +23,7 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
     private lazy var rocketNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "default value"
+        label.lineBreakMode = .byTruncatingTail
         label.font = UIFont(name: FontNames.labGrotesqueRegular.rawValue, size: 20)
         return label
     }()
@@ -47,13 +47,19 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
     
     public func configureCell(with launch: Launches) {
         rocketNameLabel.text = launch.name
-        launchDateLabel.text = launch.date_local?.formattedDate(withFormat: "dd MMM, yyyy")
+        let dateString = launch.date_local ?? ""
+        let isoDateFormatter = ISO8601DateFormatter()
+        let date = isoDateFormatter.date(from: dateString)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM, yyyy"
+        let dateStringFormatted = dateFormatter.string(from: date!)
+        
+        launchDateLabel.text = dateStringFormatted
+        
         switch launch.success {
-        case true:
-            rocketStatusImage.image = UIImage(named: "rocketSuccess")
-        case false:
-            rocketStatusImage.image = UIImage(named: "rocketFailure")
-        default: break
+        case true: rocketStatusImage.image = UIImage(named: "rocketSuccess")
+        default: rocketStatusImage.image = UIImage(named: "rocketFailure")
         }
     }
     
@@ -66,22 +72,22 @@ class LaunchesCollectionViewCell: UICollectionViewCell {
         }
         
         rocketNameLabel.snp.makeConstraints { make in
-            make.left.equalTo(containerView).inset(24)
-            make.top.equalTo(containerView).inset(24)
-            make.width.equalTo(350)
+            make.left.equalTo(containerView).inset(26)
+            make.top.equalTo(containerView).inset(26)
+            make.width.equalTo(150)
         }
         
         launchDateLabel.snp.makeConstraints { make in
-            make.left.equalTo(containerView).inset(24)
-            make.bottom.equalTo(rocketNameLabel).inset(24)
-            make.width.equalTo(350)
+            make.left.equalTo(containerView).inset(26)
+            make.bottom.equalTo(containerView).inset(26)
+            make.width.equalTo(400)
         }
         
         rocketStatusImage.snp.makeConstraints { make in
             make.height.equalTo(32)
             make.width.equalTo(32)
+            make.centerY.equalTo(containerView)
             make.right.equalTo(containerView).inset(32)
-            make.top.equalTo(containerView).inset(34)
         }
     }
 }
