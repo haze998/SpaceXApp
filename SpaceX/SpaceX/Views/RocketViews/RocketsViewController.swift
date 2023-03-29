@@ -85,10 +85,6 @@ class RocketsViewController: UIViewController, ReloadCollectionView {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        contentView.addSubviews(views: [rocketImage, rocketsInfoView])
-        rocketsInfoView.addSubviews(views: [rocketNameLabel, settingsButton, measureCollectionView, showLaunchesButton])
         
         measureCollectionView.delegate = self
         measureCollectionView.dataSource = self
@@ -133,6 +129,7 @@ class RocketsViewController: UIViewController, ReloadCollectionView {
     private func loadRocketInfo() {
         viewModel.fetchedRockets(index: index) { rocket in
             guard let url = URL(string: rocket.flickrImages?.randomElement() ?? "") else { return }
+            self.rocketImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
             self.rocketImage.sd_setImage(with: url)
             self.rocketNameLabel.text = rocket.name
             self.measureCollectionView.reloadData()
@@ -154,6 +151,11 @@ class RocketsViewController: UIViewController, ReloadCollectionView {
     }
     
     private func setupConstraints() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubviews(views: [rocketImage, rocketsInfoView])
+        rocketsInfoView.addSubviews(views: [rocketNameLabel, settingsButton, measureCollectionView, showLaunchesButton])
+        
         scrollView.snp.makeConstraints { make in
             make.leading.top.trailing.bottom.equalTo(view)
         }
@@ -168,7 +170,7 @@ class RocketsViewController: UIViewController, ReloadCollectionView {
             } else if UIScreen.main.bounds.height > 800 && UIScreen.main.bounds.height <= 813 {
                 make.height.equalTo(view.frame.height + 50)
             } else {
-                make.height.equalTo(1250)
+                make.height.equalTo(1260)
                 scrollView.isScrollEnabled = true
             }
         }

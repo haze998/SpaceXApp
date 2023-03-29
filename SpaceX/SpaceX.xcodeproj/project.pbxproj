@@ -32,6 +32,7 @@
 		0684542E29B8BABF009529F2 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684542D29B8BABF009529F2 /* RocketsViewController.swift */; };
 		0684543329B8BAC0009529F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0684543229B8BAC0009529F2 /* Assets.xcassets */; };
 		0684543629B8BAC0009529F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */; };
+		069244F829D4958F00537EA4 /* LaunchesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069244F729D4958F00537EA4 /* LaunchesCollectionViewCell.swift */; };
 		06B5C32D29C489E2008FC679 /* RocketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5C32C29C489E2008FC679 /* RocketInfoView.swift */; };
 		06EE605C29C69E0100013E99 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE605B29C69E0100013E99 /* Extension + UIView.swift */; };
 		06F4181429D1F59700897073 /* RocketWikiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F4181329D1F59700897073 /* RocketWikiCollectionViewCell.swift */; };
@@ -67,6 +68,7 @@
 		0684543229B8BAC0009529F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0684543529B8BAC0009529F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0684543729B8BAC0009529F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		069244F729D4958F00537EA4 /* LaunchesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesCollectionViewCell.swift; sourceTree = "<group>"; };
 		06B5C32C29C489E2008FC679 /* RocketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoView.swift; sourceTree = "<group>"; };
 		06EE605B29C69E0100013E99 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		06F4181329D1F59700897073 /* RocketWikiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketWikiCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				06412A3B29C23E0800D11400 /* LaunchesViewController.swift */,
+				069244F729D4958F00537EA4 /* LaunchesCollectionViewCell.swift */,
 			);
 			path = LaunchesViews;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				06F4181429D1F59700897073 /* RocketWikiCollectionViewCell.swift in Sources */,
 				067FB4BF29CA07CC0075B737 /* SettingsView.swift in Sources */,
 				0640260E29CB7D7900088DFB /* Extension + CollectionView.swift in Sources */,
+				069244F829D4958F00537EA4 /* LaunchesCollectionViewCell.swift in Sources */,
 				06412A2D29C21FB000D11400 /* LaunchesModel.swift in Sources */,
 				0684542E29B8BABF009529F2 /* RocketsViewController.swift in Sources */,
 				06EE605C29C69E0100013E99 /* Extension + UIView.swift in Sources */,

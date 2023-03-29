@@ -13,9 +13,10 @@ class LaunchesViewModel {
     private(set) var listOfLaunches = [Launches]()
     
     // MARK: - Fetched launches info
-    func fetchedLaunches() {
+    func fetchedLaunches(complition: @escaping () -> Void) {
         LaunchesNetworkManager.shared.getLaunches { launches in
             self.listOfLaunches.append(contentsOf: launches)
+            complition()
         }
     }
 }
