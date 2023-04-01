@@ -24,7 +24,7 @@ The ***SpaceX App*** utilizes the SpaceXRockets and SpaceXLaunches API to provid
 
 | Rockets | Settings | Launches |
 :--------:|:--------:|:--------:|
-![Rockets]() | ![Settings]() | ![Launches]() |
+![Rockets](https://media.giphy.com/media/vOifllMn0BVZ5g23fR/giphy.gif) | ![Settings](https://media.giphy.com/media/slClgkY719jODlnEbD/giphy.gif) | ![Launches](https://media.giphy.com/media/bgRoYaYjhSFmw6X9cm/giphy.gif) |
 
 
 ## Features
