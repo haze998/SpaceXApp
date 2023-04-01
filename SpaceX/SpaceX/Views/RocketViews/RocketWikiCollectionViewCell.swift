@@ -37,13 +37,16 @@ class RocketWikiCollectionViewCell: UICollectionViewCell {
     }
     
     public func configureCell(with rocket: Rocket, indexPath: IndexPath) {
+        let costPerLaunch = rocket.costPerLaunch ?? 0
+        let firstDigits = costPerLaunch / 1000000
+        
         switch indexPath.item {
         case 0: trailingLabel.text = rocket.firstFlight?.formattedDate(withFormat: "dd MMM, yyyy")
             leadingLabel.text = WikiInfo.firstLaunch.rawValue
         case 1:trailingLabel.text = rocket.country
             leadingLabel.text = WikiInfo.country.rawValue
         case 2:
-            trailingLabel.text = "$\(Double(rocket.costPerLaunch ?? 0)) mln"
+            trailingLabel.text = "$\(Double(firstDigits)) mln"
             leadingLabel.text = WikiInfo.launchCost.rawValue
         default: break
         }

@@ -37,17 +37,32 @@ class FirstStageCollectionViewCell: UICollectionViewCell {
     }
     
     public func configureCell(with rocket: Rocket, indexPath: IndexPath) {
+        // configure trailing label with "Fuel amount tons"
+        let fuelAmount = rocket.firstStage?.fuelAmountTons ?? 0
+        let attributedFuelAmountString = NSMutableAttributedString(string: "\(fuelAmount) ton")
+        let fuelRange = (attributedFuelAmountString.string as NSString).range(of: "ton")
+        let fuelFont = UIFont(name: FontNames.labGrotesqueBold.rawValue, size: 16)
+        let color = UIColor(red: 0.557, green: 0.557, blue: 0.561, alpha: 1)
+        attributedFuelAmountString.addAttribute(.font, value: fuelFont ?? "", range: fuelRange)
+        attributedFuelAmountString.addAttribute(.foregroundColor, value: color, range: fuelRange)
+        
+        // configure trailing label with "Burn time per second"
+        let combTime = rocket.firstStage?.burnTimeSEC ?? 0
+        let attributedCombTimeString = NSMutableAttributedString(string: "\(combTime) sec")
+        let secRange = (attributedCombTimeString.string as NSString).range(of: "sec")
+        let font = UIFont(name: FontNames.labGrotesqueBold.rawValue, size: 16)
+        attributedCombTimeString.addAttribute(.font, value: font ?? "", range: secRange)
+        attributedCombTimeString.addAttribute(.foregroundColor, value: color, range: secRange)
         
         switch indexPath.row {
         case 0: trailingLabel.text = (String(describing: rocket.firstStage?.engines ?? 0))
             leadingLabel.text = FirstStageInfo.numberOfEngines.rawValue
-        case 1: trailingLabel.text = "\(String(describing: rocket.firstStage?.fuelAmountTons ?? 0)) ton"
+        case 1: trailingLabel.attributedText = attributedFuelAmountString
             leadingLabel.text = FirstStageInfo.fuelQuantity.rawValue
-        case 2: trailingLabel.text = "\(String(describing: rocket.firstStage?.burnTimeSEC ?? 0)) sec"
+        case 2: trailingLabel.attributedText = attributedCombTimeString
             leadingLabel.text = FirstStageInfo.combustionTime.rawValue
         default: return
         }
-        
     }
     
     private func setupConstraints() {

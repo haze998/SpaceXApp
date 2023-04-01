@@ -39,6 +39,19 @@ class MeasureCollectionViewCell: UICollectionViewCell {
     }
     
     public func configureCell(with rocket: Rocket, quantity: Quantity, indexPath: IndexPath) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        let rocketMassKg = rocket.mass?.kg ?? 0
+        let rocketMassLb = rocket.mass?.lb ?? 0
+        let payloadKg = rocket.payloadWeights?[0].kg ?? 0
+        let payloadLb = rocket.payloadWeights?[0].lb ?? 0
+        
+        let formattedMassKg = numberFormatter.string(from: NSNumber(value: rocketMassKg))
+        let formattedMassLb = numberFormatter.string(from: NSNumber(value: rocketMassLb))
+        let formattedPayloadKg = numberFormatter.string(from: NSNumber(value: payloadKg))
+        let formattedPayloadLb = numberFormatter.string(from: NSNumber(value: payloadLb))
+        
         let defaultsStorage = UserDefaults.standard.integer(forKey: quantity.rawValue)
         measureLabel.text = "\(quantity.rawValue)" + ", " + "\(quantity.measures[defaultsStorage])"
         switch indexPath.item {
@@ -47,10 +60,9 @@ class MeasureCollectionViewCell: UICollectionViewCell {
         case 1:
             defaultsStorage == 0 ? (counterLabel.text = "\(rocket.diameter?.meters ?? 0)") : (counterLabel.text = "\(rocket.diameter?.feet ?? 0)")
         case 2:
-            defaultsStorage == 0 ? (counterLabel.text = "\(rocket.mass?.kg ?? 0)") : (counterLabel.text = "\(rocket.mass?.lb ?? 0)")
+            defaultsStorage == 0 ? (counterLabel.text = "\(formattedMassKg ?? "")") : (counterLabel.text = "\(formattedMassLb ?? "")")
         case 3:
-            guard let payloadsWeight = rocket.payloadWeights else { return }
-            defaultsStorage == 0 ? (counterLabel.text = "\(payloadsWeight[0].kg ?? 0)") : (counterLabel.text = "\(payloadsWeight[0].lb ?? 0)")
+            defaultsStorage == 0 ? (counterLabel.text = "\(formattedPayloadKg ?? "")") : (counterLabel.text = "\(formattedPayloadLb ?? "")")
         default: break
         }
     }
