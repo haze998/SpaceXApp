@@ -46,7 +46,7 @@ class SecondStageCollectionViewCell: UICollectionViewCell {
         attributedFuelAmountString.addAttribute(.font, value: fuelFont ?? "", range: fuelRange)
         attributedFuelAmountString.addAttribute(.foregroundColor, value: color, range: fuelRange)
         
-        // configure trailing label with "Burn time per second"
+        // configure trailing label with "Burn time per/second"
         let combTime = rocket.secondStage?.burnTimeSEC ?? 0
         let attributedCombTimeString = NSMutableAttributedString(string: "\(combTime) sec")
         let secRange = (attributedCombTimeString.string as NSString).range(of: "sec")
