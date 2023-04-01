@@ -153,8 +153,29 @@
 				06B5C32F29C48EEB008FC679 /* RocketViews */,
 				06B5C33029C48F02008FC679 /* LaunchesViews */,
 				06B5C33129C48F1B008FC679 /* SettingsViews */,
+				06444CF029D85EAF00DE6371 /* LaunchScreen */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		06444CEF29D85D5900DE6371 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0684543229B8BAC0009529F2 /* Assets.xcassets */,
+				0684542B29B8BABF009529F2 /* SceneDelegate.swift */,
+				0684542929B8BABF009529F2 /* AppDelegate.swift */,
+				0634BE1F29BE05B30015D5A2 /* Fonts */,
+				06308CE729C7357400A35CDB /* Constants */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		06444CF029D85EAF00DE6371 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		0684541D29B8BABF009529F2 = {
@@ -178,17 +199,12 @@
 		0684542829B8BABF009529F2 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
-				06308CE629C7354800A35CDB /* Extensions */,
-				06308CE729C7357400A35CDB /* Constants */,
+				06412A2929C21E8100D11400 /* Models */,
 				06412A3829C233AB00D11400 /* Views */,
 				06412A3329C22C4000D11400 /* ViewModels */,
 				06412A2E29C2222300D11400 /* Managers */,
-				06412A2929C21E8100D11400 /* Models */,
-				0634BE1F29BE05B30015D5A2 /* Fonts */,
-				0684542929B8BABF009529F2 /* AppDelegate.swift */,
-				0684542B29B8BABF009529F2 /* SceneDelegate.swift */,
-				0684543229B8BAC0009529F2 /* Assets.xcassets */,
-				0684543429B8BAC0009529F2 /* LaunchScreen.storyboard */,
+				06308CE629C7354800A35CDB /* Extensions */,
+				06444CEF29D85D5900DE6371 /* Resources */,
 				0684543729B8BAC0009529F2 /* Info.plist */,
 			);
 			path = SpaceX;
