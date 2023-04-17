@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ReloadCollectionView: AnyObject {
-    func reloadData()
-}
-
 class SettingsViewController: UIViewController {
         
     private lazy var closeButton: UIButton = {
